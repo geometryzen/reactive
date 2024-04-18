@@ -1,5 +1,5 @@
-import { greeting } from "../src/index";
+import { atomic } from "../src/index";
 
 test("index", function () {
-    expect(greeting("World")).toBe("Hello, World!");
+    expect(typeof atomic === 'function').toBe(true);
 });
