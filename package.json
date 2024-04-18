@@ -1,6 +1,6 @@
 {
     "name": "@geometryzen/reactive",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "description": "Template TypeScript Library",
     "exports": {
         ".": {
