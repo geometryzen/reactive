@@ -58,7 +58,7 @@ const options: RollupOptions[] = [
             {
                 file: pkg.browser,
                 format: 'umd',
-                name: 'MYLIB',
+                name: 'REACTIVE',
                 sourcemap: true
             }
         ],
@@ -72,7 +72,7 @@ const options: RollupOptions[] = [
     },
     // Bundle the generated ESM type definitions.
     {
-        input: './dist/esm/types/src/index.d.ts',
+        input: './dist/commonjs/types/src/index.d.ts',
         output: [{ file: pkg.types, format: "esm" }],
         plugins: [dts()]
     }
