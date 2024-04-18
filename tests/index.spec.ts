@@ -1,5 +1,5 @@
-import { atomic } from "../src/index";
+import { state } from "../src/index";
 
 test("index", function () {
-    expect(typeof atomic === 'function').toBe(true);
+    expect(typeof state === 'function').toBe(true);
 });

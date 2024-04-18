@@ -1,9 +1,9 @@
-import { Signal } from "signal-polyfill";
+import { Signal as Sp } from "signal-polyfill";
 import { Disposable, disposableFromFunction } from "./Disposable";
 
 let needsEnqueue = true;
 
-const w = new Signal.subtle.Watcher(() => {
+const w = new Sp.subtle.Watcher(() => {
     if (needsEnqueue) {
         needsEnqueue = false;
         queueMicrotask(processPending);
@@ -23,7 +23,7 @@ function processPending() {
 export function effect(callback: () => unknown): Disposable {
     let cleanup: unknown;
 
-    const computed = new Signal.Computed(() => {
+    const computed = new Sp.Computed(() => {
         typeof cleanup === "function" && cleanup();
         cleanup = callback();
     });

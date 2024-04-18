@@ -1,6 +1,6 @@
-export { atomic } from './atomic';
-export { derived } from './derived';
+export { computed } from './computed';
 export { Disposable } from './Disposable';
 export { effect } from './effect';
+export { state } from './state';
 export { Equals, Readable, State, Writable } from './types';
 
