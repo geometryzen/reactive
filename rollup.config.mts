@@ -27,12 +27,12 @@ const options: RollupOptions[] = [
         output: [
             {
                 banner,
-                file: non_minified_file(pkg.exports['.'].default),
+                file: non_minified_file(pkg.exports['.'].import),
                 format: 'esm',
                 sourcemap: true
             },
             {
-                file: pkg.exports['.'].default,
+                file: pkg.exports['.'].import,
                 format: 'esm',
                 sourcemap: true,
                 plugins: [terser()]
@@ -70,9 +70,9 @@ const options: RollupOptions[] = [
             typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.spec.ts'] })
         ]
     },
-    // Bundle the generated ESM type definitions.
+    // Bundle the generated type definitions.
     {
-        input: './dist/commonjs/types/src/index.d.ts',
+        input: './dist/esm/types/src/index.d.ts',
         output: [{ file: pkg.types, format: "esm" }],
         plugins: [dts()]
     }
